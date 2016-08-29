@@ -29,11 +29,13 @@ public class AlarmCursorWrapper extends CursorWrapper {
         long date = getLong(getColumnIndex(AlarmTable.Cols.DATE));
         int hour = getInt(getColumnIndex(AlarmTable.Cols.HOUR));
         int minute = getInt(getColumnIndex(AlarmTable.Cols.MINUTE));
+        int isAlarmOn = getInt(getColumnIndex(AlarmTable.Cols.ISALARMON));
 
         AlarmClock alarmClock = new AlarmClock(UUID.fromString(uuidString));
         alarmClock.setAlarmDate(new Date(date));
         alarmClock.setHour(hour);
         alarmClock.setMinute(minute);
+        alarmClock.setAlarmOn( isAlarmOn != 0);
 
         return alarmClock;
     }

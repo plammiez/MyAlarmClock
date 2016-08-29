@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TimePicker;
 
 import java.util.UUID;
@@ -26,6 +27,7 @@ public class AlarmFragment extends Fragment {
 
     private AlarmClock alarmClock;
     private TimePicker timePicker;
+    private Switch alarmOn;
     private Button button_del;
 
     private Callbacks callbacks;
@@ -87,6 +89,7 @@ public class AlarmFragment extends Fragment {
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
                 alarmClock.setHour(timePicker.getCurrentHour());
                 alarmClock.setMinute(timePicker.getCurrentMinute());
+                alarmClock.setAlarmOn(true);
                 updateAlarm();
             }
         });
@@ -103,6 +106,7 @@ public class AlarmFragment extends Fragment {
 //                deleteFragment.show(fm, DIALOG_DELETE);
 //            }
 //        });
+
         updateAlarm();
         return v;
     }

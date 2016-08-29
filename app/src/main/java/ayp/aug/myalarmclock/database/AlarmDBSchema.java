@@ -14,6 +14,7 @@ public class AlarmDBSchema {
             public static final String DATE = "date";
             public static final String HOUR = "hour";
             public static final String MINUTE = "minute";
+            public static final String ISALARMON = "isalarmon";
         }
 
     }

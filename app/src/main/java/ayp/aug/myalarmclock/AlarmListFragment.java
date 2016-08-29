@@ -1,6 +1,8 @@
 package ayp.aug.myalarmclock;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,8 +18,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -158,6 +163,16 @@ public class AlarmListFragment extends Fragment {
             _alarmClock = alarmClock;
             _position = position;
             titleView.setText(_alarmClock.getHour() + " : " + _alarmClock.getMinute());
+
+            button_switch.setChecked(_alarmClock.getAlarmOn());
+            button_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    _alarmClock.setAlarmOn(isChecked);
+
+                    AlarmLab.getInstance(getActivity()).updateAlarm(_alarmClock);
+                }
+            });
 
             AlarmLab.getInstance(getActivity()).updateAlarm(_alarmClock);
         }

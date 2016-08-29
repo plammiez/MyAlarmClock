@@ -38,6 +38,7 @@ public class AlarmLab {
         contentValues.put(AlarmTable.Cols.DATE, alarmClock.getAlarmDate().getTime());
         contentValues.put(AlarmTable.Cols.HOUR, alarmClock.getHour());
         contentValues.put(AlarmTable.Cols.MINUTE, alarmClock.getMinute());
+        contentValues.put(AlarmTable.Cols.ISALARMON, alarmClock.getAlarmOn());
         return contentValues;
     }
 ////////////////////////////////////////////////////////////////////

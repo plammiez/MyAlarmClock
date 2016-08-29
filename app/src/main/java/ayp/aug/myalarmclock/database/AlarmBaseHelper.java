@@ -30,7 +30,8 @@ public class AlarmBaseHelper extends SQLiteOpenHelper {
                 + AlarmTable.Cols.UUID + ","
                 + AlarmTable.Cols.DATE + ","
                 + AlarmTable.Cols.HOUR + ","
-                + AlarmTable.Cols.MINUTE + ")"
+                + AlarmTable.Cols.MINUTE + ","
+                + AlarmTable.Cols.ISALARMON + ")"
         );
     }
 

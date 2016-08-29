@@ -14,6 +14,7 @@ public class AlarmClock {
     private Date alarmDate;
     private int hour;
     private int minute;
+    private boolean isAlarmOn;
 
     public AlarmClock() {
         this(UUID.randomUUID());
@@ -55,6 +56,14 @@ public class AlarmClock {
 
     public void setHour(int hour) {
         this.hour = hour;
+    }
+
+    public boolean getAlarmOn() {
+        return isAlarmOn;
+    }
+
+    public void setAlarmOn(boolean alarmOn) {
+        isAlarmOn = alarmOn;
     }
 
 }
